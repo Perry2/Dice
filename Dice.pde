@@ -41,7 +41,7 @@ class Die
 			ellipse(myX + 40, myY + 40, 10, 10);
 		}else if(rNum == 3){
 			fill((int)(Math.random()*255),(int)(Math.random()*255),(int)(Math.random()*255));
-			ellipse(myX + 40, myY + 10, 5, 5);
+			ellipse(myX + 40, myY + 10, 10, 10);
 			ellipse(myX + 25, myY + 25, 10, 10);
 			ellipse(myX + 10, myY + 40, 10, 10);
 		}else if(rNum == 4){
