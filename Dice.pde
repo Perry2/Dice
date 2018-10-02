@@ -1,3 +1,5 @@
+int totalDice = 0;
+
 void setup()
 {
 	noLoop();
@@ -6,28 +8,33 @@ void setup()
 void draw()
 {
 	background((int)(Math.random()*255), (int)(Math.random()*255), (int)(Math.random()*255));
+	
 	for(int i = 0;i < 500;i += 50)
 	{
-		for(int a = 0;a < 500;a += 50)
+		for(int a = 0;a < 400;a += 50)
 			{
 			Die bob = new Die(i,a);
 			bob.show();
 			bob.roll();
 		}
 	}
+	textSize(50);
+	text("Total: " + totalDice,140,475);
 }
 void mousePressed()
 {
+	totalDice = 0;
 	redraw();
 }
 class Die
 {
 	int myX, myY, rNum;
 	
-	Die(int x, int y) //constructor
+	Die(int x, int y)
 	{
 		myX = x;
 		myY = y;
+
 	}
 	void roll()
 	{
@@ -66,6 +73,7 @@ class Die
 			ellipse(myX + 25, myY + 40, 10, 10);
 			ellipse(myX + 40, myY + 40, 10, 10);
 		}
+		totalDice = totalDice + rNum;
 	}
 	void show()
 	{			
